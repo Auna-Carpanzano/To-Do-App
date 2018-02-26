@@ -4,6 +4,9 @@ var express = require("express"),
 
 router.get("/", function(req, res) {
   db.Todo.find()
+  .then(function(todos) {
+    res.json(todos);
+  })
 });
 
 module.exports = router;
