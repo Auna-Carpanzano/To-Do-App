@@ -2,6 +2,7 @@ var express = require("express"),
     router = express.Router(),
     db = require("../models");
 
+// LIST ALL TODOS
 router.get("/", function(req, res) {
   db.Todo.find()
   .then(function(todos) {
@@ -12,6 +13,7 @@ router.get("/", function(req, res) {
   })
 });
 
+// CREATE NEW TODO
 router.post("/", function(req, res) {
   db.Todo.create(req.body)
   .then(function(newTodo) {
@@ -21,5 +23,8 @@ router.post("/", function(req, res) {
     res.send(err);
   })
 });
+
+// RETRIEVE INDIVIDUAL TODO
+
 
 module.exports = router;
