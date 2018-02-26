@@ -3,26 +3,9 @@ var express = require("express"),
     db = require("../models");
 
 // LIST ALL TODOS
-router.get("/", function(req, res) {
-  db.Todo.find()
-  .then(function(todos) {
-    res.json(todos);
-  })
-  .catch(function(err){
-    res.send(err);
-  })
-});
-
-// CREATE NEW TODO
-router.post("/", function(req, res) {
-  db.Todo.create(req.body)
-  .then(function(newTodo) {
-    res.status(201).json(newTodo);
-  })
-  .catch(function(err){
-    res.send(err);
-  })
-});
+router.route("/")
+  .get(helpers.getTodos)
+  .post(helpers.createTodo)
 
 // RETRIEVE INDIVIDUAL TODO
 router.get("/:todoId", function(req, res) {
