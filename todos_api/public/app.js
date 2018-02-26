@@ -29,4 +29,7 @@ function createTodo() {
   .then(function(newTodo) {
     addTodo(newTodo);
   })
+  .catch(function(err) {
+    console.log(err);
+  })
 }
