@@ -25,6 +25,8 @@ router.post("/", function(req, res) {
 });
 
 // RETRIEVE INDIVIDUAL TODO
-
+router.get("/:todoId", function(req, res) {
+  db.Todo.findById(req.params.todoId)
+});
 
 module.exports = router;
