@@ -5,6 +5,6 @@ $(document).ready(function() {
 
 function addTodos(todos) {
   todos.forEach(function(todo) {
-
-  })
+    var newTodo = $("<li>" + todo.name + "</li>");
+  });
 }
