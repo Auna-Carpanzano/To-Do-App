@@ -41,6 +41,11 @@ router.put("/:todoId", function(req, res) {
   .then(function(todo) {
     res.json(todo);
   })
-})
+  .catch(function(err) {
+    res.send(err);
+  })
+});
+
+
 
 module.exports = router;
