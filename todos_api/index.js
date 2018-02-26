@@ -10,6 +10,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use("/api/todos", todoRoutes);
 
+// ROOT ROUTE
+app.get("/", function(req, res) {
+  res.sendFile("index.html");
+});
+
 app.listen(port, function() {
   console.log("App is running");
 });
