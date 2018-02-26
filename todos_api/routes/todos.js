@@ -37,7 +37,7 @@ router.get("/:todoId", function(req, res) {
 
 // UPDATE ROUTE
 router.put("/:todoId", function(req, res) {
-  db.Todo.findOneAndUpdate({_id: req.params.todoId}, req.body)
+  db.Todo.findOneAndUpdate({_id: req.params.todoId}, req.body, {new: true})
 })
 
 module.exports = router;
