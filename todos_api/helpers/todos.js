@@ -20,4 +20,14 @@ exports.createTodo = function(req, res) {
   })
 }
 
+exports.getTodo = function(req, res) {
+  db.Todo.findById(req.params.todoId)
+  .then(function(foundTodo) {
+    res.json(foundTodo);
+  })
+  .catch(function(err) {
+    res.send(err);
+  })
+}
+
 module.exports = exports;
