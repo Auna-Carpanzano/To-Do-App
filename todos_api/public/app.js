@@ -18,3 +18,7 @@ function addTodos(todos) {
     $(".list").append(newTodo);
   });
 }
+
+function createTodo() {
+  var userInput = $("#todoInput").val();
+}
