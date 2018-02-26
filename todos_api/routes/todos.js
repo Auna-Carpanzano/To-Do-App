@@ -52,6 +52,9 @@ router.delete("/:todoId", function(req, res) {
   .then(function() {
     res.json({message: "To-do deleted!"})
   })
+  .catch(function(err) {
+    res.send(err)
+  })
 });
 
 module.exports = router;
