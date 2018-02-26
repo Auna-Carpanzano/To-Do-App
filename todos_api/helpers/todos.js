@@ -9,3 +9,5 @@ exports.getTodos = function(req, res) {
     res.send(err);
   })
 }
+
+module.exports = exports;
