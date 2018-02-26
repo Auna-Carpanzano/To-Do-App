@@ -46,6 +46,9 @@ router.put("/:todoId", function(req, res) {
   })
 });
 
-
+// DELETE ROUTE
+router.delete("/:todoId", function(req, res) {
+  db.Todo.remove({_id: req.params.todoId})
+});
 
 module.exports = router;
