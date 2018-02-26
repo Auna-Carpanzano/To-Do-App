@@ -6,7 +6,12 @@ $(document).ready(function() {
     if (event.which == 13) {
       createTodo();
     }
-  })
+  });
+
+  $(".list").on("click", "span", function() {
+    $(this).parent().remove();
+  });
+
 });
 
 function addTodos(todos) {
