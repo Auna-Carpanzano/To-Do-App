@@ -1,8 +1,8 @@
 var express = require("express"),
     router = express.Router(),
-    db = require("../models");
+    db = require("../models"),
+    helpers = require("../helpers/todos");
 
-// LIST ALL TODOS
 router.route("/")
   .get(helpers.getTodos)
   .post(helpers.createTodo)
