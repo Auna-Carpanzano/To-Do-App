@@ -4,6 +4,8 @@ var express = require("express"),
 
 var todoRoutes = require("./routes/todos");
 
+app.use("/api/todos", todoRoutes);
+
 app.listen(port, function() {
   console.log("App is running");
 });
