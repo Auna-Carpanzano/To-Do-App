@@ -5,7 +5,7 @@ $(document).ready(function() {
 
 function addTodos(todos) {
   todos.forEach(function(todo) {
-    var newTodo = $("<li>" + todo.name + "</li>");
+    var newTodo = $('<li class="task">' + todo.name + "</li>");
     $(".list").append(newTodo);
   });
 }
