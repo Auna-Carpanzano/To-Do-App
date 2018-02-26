@@ -21,4 +21,5 @@ function addTodos(todos) {
 
 function createTodo() {
   var userInput = $("#todoInput").val();
+  $.post("/api/todos", {name: userInput});
 }
