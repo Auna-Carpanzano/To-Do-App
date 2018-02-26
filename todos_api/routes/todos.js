@@ -17,6 +17,9 @@ router.post("/", function(req, res) {
   .then(function(newTodo) {
     res.status(201).json(newTodo);
   })
+  .catch(function(err){
+    res.send(err);
+  })
 });
 
 module.exports = router;
