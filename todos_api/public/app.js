@@ -9,15 +9,8 @@ $(document).ready(function() {
   });
 
   $(".list").on("click", "span", function() {
-    var clickedId = $(this).parent().data("id");
-    var deleteUrl = "/api/todos/" + clickedId;
-    $(this).parent().remove();
-    $.ajax({
-      method: "DELETE",
-      url: deleteUrl
-    })
+    removeTodo($(this).parent());
   });
-
 });
 
 function addTodos(todos) {
@@ -41,6 +34,21 @@ function createTodo() {
   .then(function(newTodo) {
     $("#todoInput").val("");
     addTodo(newTodo);
+  })
+  .catch(function(err) {
+    console.log(err);
+  })
+}
+
+function removeTodo(todo) {
+  var clickedId = todo.data("id");
+  var deleteUrl = "/api/todos/" + clickedId;
+  $.ajax({
+    method: "DELETE",
+    url: deleteUrl
+  })
+  .then(function(data) {
+    todo.remove();
   })
   .catch(function(err) {
     console.log(err);
