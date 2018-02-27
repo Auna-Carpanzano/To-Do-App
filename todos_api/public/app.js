@@ -10,6 +10,7 @@ $(document).ready(function() {
 
   $(".list").on("click", "span", function() {
     var clickedId = $(this).parent().data("id");
+    var deleteUrl = "/api/todos/" + clickedId;
     $(this).parent().remove();
   });
 
