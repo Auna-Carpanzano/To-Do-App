@@ -12,6 +12,10 @@ $(document).ready(function() {
     var clickedId = $(this).parent().data("id");
     var deleteUrl = "/api/todos/" + clickedId;
     $(this).parent().remove();
+    $.ajax({
+      method: "DELETE",
+      url: deleteUrl
+    })
   });
 
 });
