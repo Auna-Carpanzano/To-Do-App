@@ -71,4 +71,8 @@ function updateTodo(todo) {
     url: updateUrl,
     data: updateData
   })
+  .then(function(updatedTodo) {
+    todo.toggleClass("done");
+    todo.data("completed", isDone);
+  })
 }
