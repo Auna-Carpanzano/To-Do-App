@@ -22,6 +22,7 @@ function addTodos(todos) {
 
 function addTodo(todo) {
   var newTodo = $('<li class="task">' + todo.name + '<span>X</span>' + "</li>");
+  newTodo.data("id", todo._id);
   if (todo.completed) {
     newTodo.addClass("done");
   }
