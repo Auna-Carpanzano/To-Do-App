@@ -65,4 +65,5 @@ function removeTodo(todo) {
 function updateTodo(todo) {
   var updateUrl = "/api/todos/" + todo.data("id");
   var isDone = !todo.data("completed");
+  var updateData = {completed: isDone};
 }
