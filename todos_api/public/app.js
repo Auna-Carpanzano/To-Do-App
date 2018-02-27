@@ -9,6 +9,7 @@ $(document).ready(function() {
   });
 
   $(".list").on("click", "span", function() {
+    var clickedId = $(this).parent().data("id");
     $(this).parent().remove();
   });
 
