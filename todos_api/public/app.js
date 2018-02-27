@@ -8,6 +8,10 @@ $(document).ready(function() {
     }
   });
 
+  $(".list").on("click", "li", function() {
+    updateTodo($(this));
+  });
+
   $(".list").on("click", "span", function(e) {
     e.stopPropagation();
     removeTodo($(this).parent());
