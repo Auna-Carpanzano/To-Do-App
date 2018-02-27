@@ -8,9 +8,11 @@ $(document).ready(function() {
     }
   });
 
-  $(".list").on("click", "span", function() {
+  $(".list").on("click", "span", function(e) {
+    e.stopPropagation();
     removeTodo($(this).parent());
   });
+
 });
 
 function addTodos(todos) {
